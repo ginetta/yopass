@@ -1,4 +1,4 @@
-import { Controller, UseFormMethods } from 'react-hook-form';
+import { Control, Controller } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import {
   FormControl,
@@ -7,17 +7,9 @@ import {
   Radio,
   RadioGroup,
 } from '@mui/material';
-import makeStyles from '@mui/styles/makeStyles';
 
-const useStyles = makeStyles({
-  radioGroup: {
-    justifyContent: 'center',
-  },
-});
-
-export const Expiration = (props: { control: UseFormMethods['control'] }) => {
+export const Expiration = (props: { control: Control<any> }) => {
   const { t } = useTranslation();
-  const classes = useStyles();
   return (
     <FormControl component="fieldset" margin="dense">
       <FormLabel component="legend">{t('expiration.legend')}</FormLabel>
@@ -26,33 +18,38 @@ export const Expiration = (props: { control: UseFormMethods['control'] }) => {
         control={props.control}
         defaultValue="3600"
         name="expiration"
-        as={
+        render={({ field }) => (
           <RadioGroup
+            {...field}
             row
-            classes={{
-              root: classes.radioGroup,
+            sx={{
+              root: {
+                radioGroup: {
+                  justifyContent: 'center',
+                },
+              },
             }}
           >
             <FormControlLabel
               labelPlacement="end"
               value="3600"
               control={<Radio color="primary" />}
-              label={t('expiration.optionOneHourLabel')}
+              label={t('expiration.optionOneHourLabel') as string}
             />
             <FormControlLabel
               labelPlacement="end"
               value="86400"
               control={<Radio color="primary" />}
-              label={t('expiration.optionOneDayLabel')}
+              label={t('expiration.optionOneDayLabel') as string}
             />
             <FormControlLabel
               labelPlacement="end"
               value="604800"
               control={<Radio color="primary" />}
-              label={t('expiration.optionOneWeekLabel')}
+              label={t('expiration.optionOneWeekLabel') as string}
             />
           </RadioGroup>
-        }
+        )}
       />
     </FormControl>
   );
