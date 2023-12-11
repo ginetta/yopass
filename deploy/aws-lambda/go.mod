@@ -1,6 +1,6 @@
 module github.com/yopass/yopass-lambda
 
-replace github.com/ginetta/yopass => ../../
+replace github.com/jhaals/yopass => ../../
 
 require (
 	github.com/akrylysov/algnhsa v0.12.1
