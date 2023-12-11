@@ -3,13 +3,12 @@ package yopass_test
 import (
 	"errors"
 	"fmt"
+	"go.uber.org/zap/zaptest"
 	"net/http/httptest"
 	"testing"
 
-	"go.uber.org/zap/zaptest"
-
-	"github.com/ginetta/yopass/pkg/server"
-	"github.com/ginetta/yopass/pkg/yopass"
+	"github.com/jhaals/yopass/pkg/server"
+	"github.com/jhaals/yopass/pkg/yopass"
 	"github.com/prometheus/client_golang/prometheus"
 )
 

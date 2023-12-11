@@ -8,7 +8,7 @@ require (
 	github.com/aws/aws-sdk-go v1.40.43
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
 	github.com/felixge/httpsnoop v1.0.2 // indirect
-	github.com/ginetta/yopass v0.0.0-20210916074044-f55704ca3135
+	github.com/jhaals/yopass v0.0.0-20210916074044-f55704ca3135
 	github.com/prometheus/client_golang v1.11.0
 	github.com/prometheus/common v0.30.0 // indirect
 	github.com/prometheus/procfs v0.7.3 // indirect

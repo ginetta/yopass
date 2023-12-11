@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"time"
 
-	"github.com/ginetta/yopass/pkg/yopass"
 	"github.com/go-redis/redis/v7"
+	"github.com/jhaals/yopass/pkg/yopass"
 )
 
 // NewRedis returns a new Redis database client
