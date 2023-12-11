@@ -23,7 +23,7 @@ func main() {
 	}
 
 	registry := prometheus.NewRegistry()
-	y := server.New(NewDynamo(os.Getenv("TABLE_NAME")), maxLength, registry, false, nil)
+	y := server.New(NewDynamo(os.Getenv("TABLE_NAME")), maxLength, registry, false)
 
 	algnhsa.ListenAndServe(
 		y.HTTPHandler(),
